@@ -22,11 +22,17 @@ body.oscuro {
    BASE
 ========================= */
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* solo bloquea lateral */
+}
+
+
 body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
   font-family: 'Poppins', sans-serif;
-  margin: 0;
 }
 
 /* =========================
@@ -38,18 +44,12 @@ body {
   align-items: center;
   justify-content: center;
   gap: 35px;
-
   background-color: var(--color-header);
   padding: 24px 40px;
-  margin: 20px;
-
+  margin: 16px;
   border-radius: 16px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-
-  flex-wrap: nowrap;
 }
-
-/* BLOQUES */
 
 .logo-titulo,
 .header-info {
@@ -59,34 +59,23 @@ body {
   white-space: nowrap;
 }
 
-/* LOGO */
-
 .encabezado img {
   width: 150px;
-  height: auto;
-  flex-shrink: 0;
 }
-
-/* TÍTULO */
 
 .encabezado h1 {
   font-family: "Edu SA Hand", cursive;
   font-size: 60px;
-  font-weight: 500;
   margin: 0;
-  color: var(--color-texto);
 }
 
-/* RELOJ Y CLIMA */
-
-#reloj,
-#clima {
+#reloj {
   font-size: 18px;
-  font-weight: 500;
-  color: var(--color-texto);
 }
 
-/* BOTÓN MODO OSCURO */
+/* =========================
+   BOTONES HEADER
+========================= */
 
 #modoOscuroBtn {
   font-size: 18px;
@@ -94,13 +83,8 @@ body {
   border-radius: 10px;
   border: 2px solid var(--color-borde);
   background-color: var(--color-card);
-  color: var(--color-texto);
   cursor: pointer;
 }
-
-/* =========================
-   BOTÓN CARRITO
-========================= */
 
 .carrito-btn {
   font-size: 24px;
@@ -110,12 +94,6 @@ body {
   border: 2px solid var(--color-borde);
   cursor: pointer;
   position: relative;
-  color: var(--color-texto);
-}
-
-.carrito-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .carrito-contador {
@@ -135,13 +113,10 @@ body {
 
 .carrito-panel {
   position: absolute;
-  top: 100px;
-  right: 40px;
+  top: 110px;
+  right: 20px;
   width: 320px;
-
   background: var(--color-card);
-  color: var(--color-texto);
-
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -152,53 +127,8 @@ body {
   display: none;
 }
 
-.carrito-panel h2 {
-  text-align: center;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.carrito-productos p {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  margin: 6px 0;
-  color: var(--color-texto);
-}
-
 .total {
-  font-size: 16px;
   font-weight: 600;
-  margin-top: 10px;
-}
-
-.envio {
-  display: block;
-  margin: 10px 0;
-  cursor: pointer;
-}
-
-#formPedido input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--color-borde);
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
-}
-
-.confirmar-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #25d366;
-  border: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
 }
 
 /* =========================
@@ -206,52 +136,33 @@ body {
 ========================= */
 
 .productos-section {
+  width: 100%;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin: 40px auto;
-  max-width: 1200px;
+  gap: 12px;
 }
 
 .carrusel-viewport {
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
 }
 
 .carrusel {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   transition: transform 0.4s ease;
-  justify-content: center;
+  padding-left: 16px;
 }
 
-/* TARJETA */
-
-.card,
 .producto {
+  flex: 0 0 250px;
   background-color: var(--color-card);
-  color: var(--color-texto);
   border: 1px solid var(--color-borde);
   border-radius: 15px;
   padding: 20px;
-  width: 240px;
   text-align: center;
-  transition: transform 0.3s;
-}
-
-.card h3,
-.producto h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: var(--color-texto);
-}
-
-.card p,
-.producto p {
-  font-size: 18px;
-  color: var(--color-texto);
-  font-weight: 600;
 }
 
 .producto img {
@@ -261,21 +172,14 @@ body {
   border-radius: 10px;
 }
 
-.card button,
 .producto button {
   margin-top: 10px;
-  padding: 10px 15px;
+  padding: 10px;
   background-color: #ff9800;
   border: none;
   border-radius: 10px;
   color: white;
-  font-size: 16px;
   cursor: pointer;
-}
-
-.card button:hover,
-.producto button:hover {
-  background-color: #e68900;
 }
 
 .carrusel-btn {
@@ -283,227 +187,282 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-texto);
 }
 
 /* =========================
-   RESPONSIVE
+   FONDO EMOJIS
+========================= */
+
+#fondo-emojis {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.emoji-flotante {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.45;
+}
+
+/* =========================
+   RESPONSIVE MOBILE
 ========================= */
 
 @media (max-width: 768px) {
+
   .encabezado {
     flex-direction: column;
-    gap: 16px;
-    padding: 20px;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    margin: 8px;
   }
 
-  .logo-titulo,
-  .header-info {
-    justify-content: center;
-    flex-wrap: wrap;
+  .logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: normal; /* 👈 CLAVE */
   }
 
-  .encabezado h1 {
-    font-size: 36px;
-  }
-
-  .encabezado img {
-    width: 70px;
-  }
-
-  #reloj,
-  #clima {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
   .encabezado h1 {
     font-size: 32px;
+    line-height: 1;
   }
 
   .encabezado img {
-    width: 60px;
+    width: 56px;
+  }
+
+  .header-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap; /* 👈 CLAVE */
+  }
+
+  #reloj {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  #modoOscuroBtn,
+  .carrito-btn {
+    padding: 8px 12px;
+    font-size: 20px;
+  }
+
+
+  .carrusel-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carrusel {
+    display: flex;
+    width: max-content;
+    gap: 16px;
+    padding-left: 12px;
+  }
+
+  /* 👇 ESPACIADOR REAL AL FINAL */
+  .carrusel::after {
+    content: "";
+    flex: 0 0 12px; /* espacio para terminar el scroll */
+  }
+
+  .producto {
+    flex: 0 0 240px;
   }
 }
 
+
+
+.panel-admin {
+  display: none !important;
+  background-color: #e3edff;
+}
+
+.panel-admin.mostrar {
+  display: block !important;
+}
 /* =========================
-   CARRUSEL (ESTRUCTURA FIJA)
+   FORMULARIO CARRITO (RESTAURADO)
 ========================= */
 
-.productos-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin: 40px auto;
-  max-width: 1200px;
-  position: relative;
-}
-
-.carrusel-viewport {
-  overflow: hidden; /* Corta lo que sobra */
-  width: 100%;
-  padding: 10px 0;
-}
-
-.carrusel {
-  display: flex;
-  gap: 20px; /* Espacio entre tarjetas */
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Movimiento suave */
-  will-change: transform; /* Optimiza para que no tiemble */
-  justify-content: flex-start; /* Siempre alineado a la izquierda */
-}
-
-/* TARJETA INDIVIDUAL */
-.producto {
-  /* No permitir que la tarjeta se encoja o crezca */
-  flex: 0 0 250px; 
-  width: 250px;
-  
+.carrito-panel {
   background-color: var(--color-card);
   color: var(--color-texto);
-  border: 1px solid var(--color-borde);
-  border-radius: 15px;
-  padding: 20px;
+}
+
+.carrito-panel h2 {
   text-align: center;
-  box-sizing: border-box; /* Evita que el padding sume ancho */
+  font-size: 22px;
+  margin-bottom: 15px;
 }
 
-.producto img {
+/* INPUTS */
+#formPedido input {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  padding: 10px;
+  margin-bottom: 12px;
   border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* INPUT DESHABILITADO */
+#formPedido input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* CHECKBOX ENVÍO */
+.envio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.envio input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* TOTAL */
+.total {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* BOTÓN CONFIRMAR */
+.confirmar-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #25d366;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirmar-btn:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-1px);
+}
+
+.confirmar-btn:active {
+  transform: scale(0.98);
+}
+
+.frase-cinta {
+  margin: 32px auto 18px;
+  width: fit-content;
+  max-width: 92%;
+  padding: 16px 34px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #eef4ff 60%,
+    #e3edff 100%
+  );
+
+  color: #1e3a8a;
+  font-family: 'Edu SA Hand', cursive;
+  font-size: 1.35rem;
+  text-align: center;
+
+  border-radius: 999px;
+
+  /* 🔥 CLAVE PARA QUE RESALTE */
+  border: 2px solid rgba(30, 58, 138, 0.25);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  position: relative;
+  z-index: 3; /* por encima de emojis */
+}
+
+/* Picos de la cinta */
+.frase-cinta::before,
+.frase-cinta::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  transform: translateY(-50%) rotate(45deg);
+  border: 2px solid rgba(30, 58, 138, 0.25);
+  z-index: -1;
+}
+
+.frase-cinta::before {
+  left: -10px;
+}
+
+.frase-cinta::after {
+  right: -10px;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .frase-cinta {
+    font-size: 1.05rem;
+    padding: 14px 22px;
+  }
 }
 
 
+#reloj {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
 
-/* Asegura que el panel nazca invisible */
-.panel-admin {
-    display: none !important; /* Oculto por defecto */
-    background-color: #f8f5f5;
-    border: 2px solid #ccc;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 12px;
-}
+  background: linear-gradient(135deg, #222, #444);
+  padding: 8px 14px;
+  border-radius: 10px;
 
-/* Esta clase se quitará o pondrá con el JS */
-.panel-admin.mostrar {
-    display: block !important;
-}
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.3),
+    inset 0 0 5px rgba(255,255,255,0.1);
 
-/* Estilos de los pedidos en el panel */
-.pedido-pendiente {
-    border: 1px solid #888;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    background: white;
-}
-.pedido-pendiente {
-  border: 1px solid #888;
-  margin-bottom: 10px;
-  padding: 5px;
-}
-.pedido-pendiente button {
-  margin-right: 5px;
+  letter-spacing: 1px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-#adminPanel {
-  position: fixed;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  border: 2px solid #333;
-  padding: 20px;
-  max-height: 80%;
-  overflow-y: auto;
-  z-index: 1000;
-}
-#adminPanel.oculto {
-  display: none;
-}
-#adminPanel input {
-  margin-bottom: 5px;
-}
-#adminPanel .productoAdmin {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-}
-.panel-admin{
-  background-color: #f8f5f5;
+#reloj {
+  animation: glow 2s infinite alternate;
 }
 
-/* CAPA DE FONDO */
-#fondo-emojis {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -2; /* Detrás de todo */
-    pointer-events: none;
-    overflow: hidden;
-    user-select: none;
-}
-
-/* LOS EMOJIS AHORA MÁS FUERTES */
-.emoji-flotante {
-    position: absolute;
-    font-size: 28px; /* Un poquito más grandes */
-    opacity: 0.45;   /* Antes era 0.15, ahora es mucho más visible */
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); /* Sombra suave para dar volumen */
-    transition: transform 0.3s ease;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ocupa el 100% del alto de la pantalla */
-}
-
-/* Si tienes un contenedor principal, haz que crezca */
-main, .productos-section {
-    flex: 1; /* Esto empuja el footer o el espacio vacío hacia afuera */
-}
-
-body {
-    overflow-x: hidden; /* Evita que la pantalla se mueva hacia los costados */
-}
-
-.panel-admin.oculto {
-    display: none !important; /* Asegura que no ocupe lugar si está oculto */
-}
-
-/* Evita que el usuario haga zoom accidentalmente y rompa el diseño */
-html, body {
-    position: fixed;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* El contenido principal será lo único que se deslice si es muy largo */
-.productos-section {
-    flex: 1;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iPhone */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@keyframes glow {
+  from {
+    box-shadow: 0 0 6px rgba(255,255,255,0.2);
+  }
+  to {
+    box-shadow: 0 0 12px rgba(0,255,200,0.6);
+  }
 }
