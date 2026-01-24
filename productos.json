@@ -4,7 +4,7 @@
     "nombre": "Milanesas con Puré",
     "precio": 2500,
     "stock": 12,
-    "imagen": "img/milanesa.jpg"
+    "imagen": "milanesa.jpg"
     
   },
   {
@@ -12,53 +12,53 @@
     "nombre": "Zapallitos rellenos",
     "precio": 2300,
     "stock": 12,
-    "imagen": "img/zapallitos.jpg"
+    "imagen": "zapallitos.jpg"
   },
   {
     "id": 3,
     "nombre": "Hamburguesitas de lenteja",
     "precio": 2700,
     "stock": 12,
-    "imagen": "img/lentejas.jfif"
+    "imagen": "lentejas.jfif"
   },
   {
     "id": 4,
     "nombre": "Ensalada de frutas",
     "precio": 2200,
     "stock": 12,
-
-    "imagen": "img/frutas.jfif"
+    "imagen": "frutas.jfif"
   },
   {
     "id": 5,
     "nombre": "Pechuga al horno",
     "precio": 2600,
     "stock": 12,
-    "imagen": "img/pechuga.jfif"
+    "imagen": "pechuga.jfif"
   },
   {
     "id": 6,
     "nombre": "Milanesa Napolitana",
     "precio": 2600,
     "stock": 12,
-    "imagen": "img/napolitana.jpg"
+    "imagen": "napolitana.jpg"
   },
 {
     "id": 7,
     "nombre": "Medallones de Pescado",
     "precio": 2600,
     "stock": 12,
-    "imagen": "img/images.jfif"
+    "imagen": "images.jfif"
   },
   {
     "id": 8,
     "nombre": "Empanadas de jamón y queso",
     "precio": 2600,
     "stock": 12,
-    "imagen": "img/empanadas.jfif"
+    "imagen": "empanadas.jfif"
   }
   
 
 ]
+
 
 
