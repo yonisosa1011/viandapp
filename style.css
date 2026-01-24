@@ -485,3 +485,25 @@ body {
     display: none !important; /* Asegura que no ocupe lugar si está oculto */
 }
 
+/* Evita que el usuario haga zoom accidentalmente y rompa el diseño */
+html, body {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenido principal será lo único que se deslice si es muy largo */
+.productos-section {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iPhone */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
