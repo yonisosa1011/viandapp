@@ -1,0 +1,487 @@
+/* =========================
+   VARIABLES DE COLOR
+========================= */
+
+:root {
+  --color-fondo: #ffffff;
+  --color-texto: #111111;
+  --color-card: #f3f3f3;
+  --color-borde: #dddddd;
+  --color-header: beige;
+}
+
+body.oscuro {
+  --color-fondo: #121212;
+  --color-texto: #ffffff;
+  --color-card: #1e1e1e;
+  --color-borde: #333333;
+  --color-header: #1e1e1e;
+}
+
+/* =========================
+   BASE
+========================= */
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+
+  background-color: var(--color-header);
+  padding: 24px 40px;
+  margin: 20px;
+
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+
+  flex-wrap: nowrap;
+}
+
+/* BLOQUES */
+
+.logo-titulo,
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  white-space: nowrap;
+}
+
+/* LOGO */
+
+.encabezado img {
+  width: 150px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* TÍTULO */
+
+.encabezado h1 {
+  font-family: "Edu SA Hand", cursive;
+  font-size: 60px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--color-texto);
+}
+
+/* RELOJ Y CLIMA */
+
+#reloj,
+#clima {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-texto);
+}
+
+/* BOTÓN MODO OSCURO */
+
+#modoOscuroBtn {
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 2px solid var(--color-borde);
+  background-color: var(--color-card);
+  color: var(--color-texto);
+  cursor: pointer;
+}
+
+/* =========================
+   BOTÓN CARRITO
+========================= */
+
+.carrito-btn {
+  font-size: 24px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background-color: var(--color-card);
+  border: 2px solid var(--color-borde);
+  cursor: pointer;
+  position: relative;
+  color: var(--color-texto);
+}
+
+.carrito-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carrito-contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* =========================
+   PANEL CARRITO
+========================= */
+
+.carrito-panel {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  width: 320px;
+
+  background: var(--color-card);
+  color: var(--color-texto);
+
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.oculto {
+  display: none;
+}
+
+.carrito-panel h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.carrito-productos p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 6px 0;
+  color: var(--color-texto);
+}
+
+.total {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.envio {
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#formPedido input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.confirmar-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #25d366;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.productos-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.carrusel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carrusel {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+  justify-content: center;
+}
+
+/* TARJETA */
+
+.card,
+.producto {
+  background-color: var(--color-card);
+  color: var(--color-texto);
+  border: 1px solid var(--color-borde);
+  border-radius: 15px;
+  padding: 20px;
+  width: 240px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card h3,
+.producto h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--color-texto);
+}
+
+.card p,
+.producto p {
+  font-size: 18px;
+  color: var(--color-texto);
+  font-weight: 600;
+}
+
+.producto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card button,
+.producto button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card button:hover,
+.producto button:hover {
+  background-color: #e68900;
+}
+
+.carrusel-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-texto);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .encabezado {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .logo-titulo,
+  .header-info {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .encabezado h1 {
+    font-size: 36px;
+  }
+
+  .encabezado img {
+    width: 70px;
+  }
+
+  #reloj,
+  #clima {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .encabezado h1 {
+    font-size: 32px;
+  }
+
+  .encabezado img {
+    width: 60px;
+  }
+}
+
+/* =========================
+   CARRUSEL (ESTRUCTURA FIJA)
+========================= */
+
+.productos-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 1200px;
+  position: relative;
+}
+
+.carrusel-viewport {
+  overflow: hidden; /* Corta lo que sobra */
+  width: 100%;
+  padding: 10px 0;
+}
+
+.carrusel {
+  display: flex;
+  gap: 20px; /* Espacio entre tarjetas */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Movimiento suave */
+  will-change: transform; /* Optimiza para que no tiemble */
+  justify-content: flex-start; /* Siempre alineado a la izquierda */
+}
+
+/* TARJETA INDIVIDUAL */
+.producto {
+  /* No permitir que la tarjeta se encoja o crezca */
+  flex: 0 0 250px; 
+  width: 250px;
+  
+  background-color: var(--color-card);
+  color: var(--color-texto);
+  border: 1px solid var(--color-borde);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box; /* Evita que el padding sume ancho */
+}
+
+.producto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+
+/* Asegura que el panel nazca invisible */
+.panel-admin {
+    display: none !important; /* Oculto por defecto */
+    background-color: #f8f5f5;
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+/* Esta clase se quitará o pondrá con el JS */
+.panel-admin.mostrar {
+    display: block !important;
+}
+
+/* Estilos de los pedidos en el panel */
+.pedido-pendiente {
+    border: 1px solid #888;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background: white;
+}
+.pedido-pendiente {
+  border: 1px solid #888;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.pedido-pendiente button {
+  margin-right: 5px;
+}
+
+#adminPanel {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid #333;
+  padding: 20px;
+  max-height: 80%;
+  overflow-y: auto;
+  z-index: 1000;
+}
+#adminPanel.oculto {
+  display: none;
+}
+#adminPanel input {
+  margin-bottom: 5px;
+}
+#adminPanel .productoAdmin {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+.panel-admin{
+  background-color: #f8f5f5;
+}
+
+/* CAPA DE FONDO */
+#fondo-emojis {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2; /* Detrás de todo */
+    pointer-events: none;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* LOS EMOJIS AHORA MÁS FUERTES */
+.emoji-flotante {
+    position: absolute;
+    font-size: 28px; /* Un poquito más grandes */
+    opacity: 0.45;   /* Antes era 0.15, ahora es mucho más visible */
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); /* Sombra suave para dar volumen */
+    transition: transform 0.3s ease;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+}
+
+/* Si tienes un contenedor principal, haz que crezca */
+main, .productos-section {
+    flex: 1; /* Esto empuja el footer o el espacio vacío hacia afuera */
+}
+
+body {
+    overflow-x: hidden; /* Evita que la pantalla se mueva hacia los costados */
+}
+
+.panel-admin.oculto {
+    display: none !important; /* Asegura que no ocupe lugar si está oculto */
+}
+

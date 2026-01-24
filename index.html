@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&display=swap');
+</style>
+
+
+
+<head>
+  <title>VIANDAPP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="fondo-emojis"></div>
+
+<header class="encabezado">
+  <div class="logo-titulo">
+    <h1>VIANDAPP</h1>
+    <img src="logo2.png" alt="Logo de Viandapp">
+  </div>
+<input type="color" id="fondoColor">
+
+  <div class="header-info">
+    <div id="reloj">00:00:00</div>
+    <button id="modoOscuroBtn">🌙</button>
+    <button class="carrito-btn">
+      🛒
+      <span class="carrito-contador">0</span>
+    </button>
+
+  </div>
+</header>
+
+
+<div class="carrito-panel oculto">
+  <h2>Tu pedido</h2>
+
+  <div class="carrito-productos">
+    
+  </div>
+
+  <p class="total">
+    Total: $<span id="total-precio">0</span>
+  </p>
+
+  <label class="envio">
+    <input type="checkbox" id="envioCheckbox">
+    Envío a domicilio (+$1000)
+  </label>
+
+  <form id="formPedido">
+    <input
+      type="text"
+      id="nombre"
+      placeholder="Nombre y apellido"
+      required
+    >
+
+    <input
+      type="url"
+      id="ubicacion"
+      placeholder="Link de Google Maps"
+      disabled
+    >
+
+    <button type="submit" class="confirmar-btn">
+      Confirmar pedido
+    </button>
+  </form>
+</div>
+
+<section class="productos-section">
+  <button class="carrusel-btn" id="prev">◀</button>
+
+  <div class="carrusel-viewport">
+    <div class="carrusel" id="carrusel">
+      <!-- Tarjetas por JS -->
+    </div>
+  </div>
+
+  <button class="carrusel-btn" id="next">▶</button>
+</section>
+
+
+<div id="panel-admin" class="panel-admin">
+  <!-- Aquí aparecerán los pedidos pendientes -->
+</div>
+
+
+<script src="srcipt.js"></script>
+</body>
+</html>
